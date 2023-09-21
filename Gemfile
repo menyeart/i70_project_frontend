@@ -60,6 +60,7 @@ group :development, :test do
   gem "webmock"
   gem "vcr"
   gem "pry"
+  gem "timecop"
 end
 
 group :development do
