@@ -61,6 +61,7 @@ group :development, :test do
   gem "vcr"
   gem "pry"
   gem "timecop"
+  gem "launchy"
 end
 
 group :development do
