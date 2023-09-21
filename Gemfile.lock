@@ -225,6 +225,7 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     thor (1.2.2)
+    timecop (0.9.6)
     timeout (0.4.0)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -269,6 +270,7 @@ DEPENDENCIES
   simplecov
   sprockets-rails
   stimulus-rails
+  timecop
   turbo-rails
   tzinfo-data
   vcr
