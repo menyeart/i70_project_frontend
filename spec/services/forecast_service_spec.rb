@@ -2,6 +2,8 @@ require "rails_helper"
 
 RSpec.describe "Forecast service", :vcr do
   before(:each) do
+    time = Time.local(2024, 9, 16, 4, 0, 0)
+    Timecop.travel(time)
     @forecast = ForecastService.new
   end
   describe "Methods" do
@@ -15,15 +17,14 @@ RSpec.describe "Forecast service", :vcr do
 
     it "takes destination params and returns durations for each destination" do
       forecast = @forecast.get_forecast_west
-      binding.pry
-
-      # expect(forecast).to be_a(Hash)
-      # expect(forecast).to have_key(:destination_addresses)
-      # expect(forecast[:destination_addresses]).to be_a(Array)
-      # expect(forecast).to have_key(:origin_addresses)
-      # expect(forecast[:origin_addresses]).to be_a(Array)
-      # expect(forecast).to have_key(:rows)
-      # expect(forecast[:rows]).to be_an(Array)
+      attribute_keys = [:date, :direction, :duration_info]
+      resort_keys = [:Loveland, :"Winter Park", :"Arapahoe Basin", :Keystone, :Breckenridge, :Copper, :Vail, :"Beaver Creek", :Cooper, :Monarch]
+      
+      expect(forecast).to be_a(Hash)
+      expect(forecast).to have_key(:data)
+      expect(forecast[:data][:attributes].keys).to eq(attribute_keys)
+      expect(forecast[:data][:attributes][:direction]).to eq("west")
+      expect(forecast[:data][:attributes][:duration_info].keys).to eq(resort_keys)
     end
   end
 end
