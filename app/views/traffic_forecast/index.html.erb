@@ -1,0 +1,11 @@
+<h1>Forecast</h1>
+<h3><%= "Date: " + @forecast.date %></h3>
+<h3><%= "Direction: " + @forecast.direction %></h3>
+<%button_placeholder = :Loveland %>
+<h3><%= button_placeholder.to_s %></h3>
+<ul>
+<%@forecast.duration_info[button_placeholder].each do |time_info| %> 
+<li><%="Departure time: #{time_info.first} Duration: #{time_info.second[:duration]} Duration with traffic: #{time_info.second[:duration_with_traffic]}"%></li>
+<%end%>
+</ul>
+
