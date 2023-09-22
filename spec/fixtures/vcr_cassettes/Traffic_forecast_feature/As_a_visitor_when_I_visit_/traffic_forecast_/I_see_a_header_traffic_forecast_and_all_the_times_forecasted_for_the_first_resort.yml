@@ -15,157 +15,43 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 500
-      message: Internal Server Error
+      code: 200
+      message: OK
     headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"ef16fadceee97c16c2cf124b9b40d66c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8cf1e9ba-91e8-4ee1-bd60-d26a3f882be5
+      - 5ddd90a7-b7c5-4053-87f8-624857ee08d3
       X-Runtime:
-      - '24.222964'
+      - '26.042057'
       Server-Timing:
-      - start_processing.action_controller;dur=0.09, sql.active_record;dur=21.16,
-        instantiation.active_record;dur=6.69, process_action.action_controller;dur=24047.71
-      Content-Length:
-      - '16074'
+      - sql.active_record;dur=45.67, start_processing.action_controller;dur=0.08,
+        instantiation.active_record;dur=9.92, process_action.action_controller;dur=25935.52
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: UTF-8
-      string: '{"status":500,"error":"Internal Server Error","exception":"#\u003cNoMethodError:
-        undefined method `[]'' for nil:NilClass\n\n        @resort_object_hash[area.name][time][\"duration\"]
-        = data[:rows].first[:elements].first[:duration][:value]\n                                                                            ^^^^^^^^^^^\u003e","traces":{"Application
-        Trace":[{"exception_object_id":23680,"id":0,"trace":"app/facades/forecast_facade.rb:15:in
-        `block (2 levels) in create_forecast''"},{"exception_object_id":23680,"id":1,"trace":"app/facades/forecast_facade.rb:13:in
-        `each''"},{"exception_object_id":23680,"id":2,"trace":"app/facades/forecast_facade.rb:13:in
-        `block in create_forecast''"},{"exception_object_id":23680,"id":5,"trace":"app/facades/forecast_facade.rb:12:in
-        `create_forecast''"},{"exception_object_id":23680,"id":6,"trace":"app/controllers/api/v1/forecast_controller.rb:3:in
-        `index''"}],"Framework Trace":[{"exception_object_id":23680,"id":3,"trace":"activerecord
-        (7.0.8) lib/active_record/relation/delegation.rb:88:in `each''"},{"exception_object_id":23680,"id":4,"trace":"activerecord
-        (7.0.8) lib/active_record/relation/delegation.rb:88:in `each''"},{"exception_object_id":23680,"id":7,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action''"},{"exception_object_id":23680,"id":8,"trace":"actionpack
-        (7.0.8) lib/abstract_controller/base.rb:215:in `process_action''"},{"exception_object_id":23680,"id":9,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/rendering.rb:165:in `process_action''"},{"exception_object_id":23680,"id":10,"trace":"actionpack
-        (7.0.8) lib/abstract_controller/callbacks.rb:234:in `block in process_action''"},{"exception_object_id":23680,"id":11,"trace":"activesupport
-        (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks''"},{"exception_object_id":23680,"id":12,"trace":"actionpack
-        (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action''"},{"exception_object_id":23680,"id":13,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action''"},{"exception_object_id":23680,"id":14,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action''"},{"exception_object_id":23680,"id":15,"trace":"activesupport
-        (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument''"},{"exception_object_id":23680,"id":16,"trace":"activesupport
-        (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument''"},{"exception_object_id":23680,"id":17,"trace":"activesupport
-        (7.0.8) lib/active_support/notifications.rb:206:in `instrument''"},{"exception_object_id":23680,"id":18,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action''"},{"exception_object_id":23680,"id":19,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action''"},{"exception_object_id":23680,"id":20,"trace":"activerecord
-        (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action''"},{"exception_object_id":23680,"id":21,"trace":"actionpack
-        (7.0.8) lib/abstract_controller/base.rb:151:in `process''"},{"exception_object_id":23680,"id":22,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal.rb:188:in `dispatch''"},{"exception_object_id":23680,"id":23,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal.rb:251:in `dispatch''"},{"exception_object_id":23680,"id":24,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch''"},{"exception_object_id":23680,"id":25,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve''"},{"exception_object_id":23680,"id":26,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve''"},{"exception_object_id":23680,"id":27,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each''"},{"exception_object_id":23680,"id":28,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve''"},{"exception_object_id":23680,"id":29,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call''"},{"exception_object_id":23680,"id":30,"trace":"rack
-        (2.2.8) lib/rack/etag.rb:27:in `call''"},{"exception_object_id":23680,"id":31,"trace":"rack
-        (2.2.8) lib/rack/conditional_get.rb:27:in `call''"},{"exception_object_id":23680,"id":32,"trace":"rack
-        (2.2.8) lib/rack/head.rb:12:in `call''"},{"exception_object_id":23680,"id":33,"trace":"activerecord
-        (7.0.8) lib/active_record/migration.rb:638:in `call''"},{"exception_object_id":23680,"id":34,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call''"},{"exception_object_id":23680,"id":35,"trace":"activesupport
-        (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks''"},{"exception_object_id":23680,"id":36,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call''"},{"exception_object_id":23680,"id":37,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call''"},{"exception_object_id":23680,"id":38,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call''"},{"exception_object_id":23680,"id":39,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call''"},{"exception_object_id":23680,"id":40,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call''"},{"exception_object_id":23680,"id":41,"trace":"railties
-        (7.0.8) lib/rails/rack/logger.rb:40:in `call_app''"},{"exception_object_id":23680,"id":42,"trace":"railties
-        (7.0.8) lib/rails/rack/logger.rb:25:in `block in call''"},{"exception_object_id":23680,"id":43,"trace":"activesupport
-        (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged''"},{"exception_object_id":23680,"id":44,"trace":"activesupport
-        (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged''"},{"exception_object_id":23680,"id":45,"trace":"activesupport
-        (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged''"},{"exception_object_id":23680,"id":46,"trace":"railties
-        (7.0.8) lib/rails/rack/logger.rb:25:in `call''"},{"exception_object_id":23680,"id":47,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call''"},{"exception_object_id":23680,"id":48,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call''"},{"exception_object_id":23680,"id":49,"trace":"rack
-        (2.2.8) lib/rack/runtime.rb:22:in `call''"},{"exception_object_id":23680,"id":50,"trace":"activesupport
-        (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
-        `call''"},{"exception_object_id":23680,"id":51,"trace":"actionpack (7.0.8)
-        lib/action_dispatch/middleware/server_timing.rb:61:in `block in call''"},{"exception_object_id":23680,"id":52,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events''"},{"exception_object_id":23680,"id":53,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call''"},{"exception_object_id":23680,"id":54,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call''"},{"exception_object_id":23680,"id":55,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call''"},{"exception_object_id":23680,"id":56,"trace":"rack
-        (2.2.8) lib/rack/sendfile.rb:110:in `call''"},{"exception_object_id":23680,"id":57,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call''"},{"exception_object_id":23680,"id":58,"trace":"railties
-        (7.0.8) lib/rails/engine.rb:530:in `call''"},{"exception_object_id":23680,"id":59,"trace":"puma
-        (5.6.7) lib/puma/configuration.rb:252:in `call''"},{"exception_object_id":23680,"id":60,"trace":"puma
-        (5.6.7) lib/puma/request.rb:77:in `block in handle_request''"},{"exception_object_id":23680,"id":61,"trace":"puma
-        (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown''"},{"exception_object_id":23680,"id":62,"trace":"puma
-        (5.6.7) lib/puma/request.rb:76:in `handle_request''"},{"exception_object_id":23680,"id":63,"trace":"puma
-        (5.6.7) lib/puma/server.rb:443:in `process_client''"},{"exception_object_id":23680,"id":64,"trace":"puma
-        (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread''"}],"Full Trace":[{"exception_object_id":23680,"id":0,"trace":"app/facades/forecast_facade.rb:15:in
-        `block (2 levels) in create_forecast''"},{"exception_object_id":23680,"id":1,"trace":"app/facades/forecast_facade.rb:13:in
-        `each''"},{"exception_object_id":23680,"id":2,"trace":"app/facades/forecast_facade.rb:13:in
-        `block in create_forecast''"},{"exception_object_id":23680,"id":3,"trace":"activerecord
-        (7.0.8) lib/active_record/relation/delegation.rb:88:in `each''"},{"exception_object_id":23680,"id":4,"trace":"activerecord
-        (7.0.8) lib/active_record/relation/delegation.rb:88:in `each''"},{"exception_object_id":23680,"id":5,"trace":"app/facades/forecast_facade.rb:12:in
-        `create_forecast''"},{"exception_object_id":23680,"id":6,"trace":"app/controllers/api/v1/forecast_controller.rb:3:in
-        `index''"},{"exception_object_id":23680,"id":7,"trace":"actionpack (7.0.8)
-        lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action''"},{"exception_object_id":23680,"id":8,"trace":"actionpack
-        (7.0.8) lib/abstract_controller/base.rb:215:in `process_action''"},{"exception_object_id":23680,"id":9,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/rendering.rb:165:in `process_action''"},{"exception_object_id":23680,"id":10,"trace":"actionpack
-        (7.0.8) lib/abstract_controller/callbacks.rb:234:in `block in process_action''"},{"exception_object_id":23680,"id":11,"trace":"activesupport
-        (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks''"},{"exception_object_id":23680,"id":12,"trace":"actionpack
-        (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action''"},{"exception_object_id":23680,"id":13,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action''"},{"exception_object_id":23680,"id":14,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action''"},{"exception_object_id":23680,"id":15,"trace":"activesupport
-        (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument''"},{"exception_object_id":23680,"id":16,"trace":"activesupport
-        (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument''"},{"exception_object_id":23680,"id":17,"trace":"activesupport
-        (7.0.8) lib/active_support/notifications.rb:206:in `instrument''"},{"exception_object_id":23680,"id":18,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action''"},{"exception_object_id":23680,"id":19,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action''"},{"exception_object_id":23680,"id":20,"trace":"activerecord
-        (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action''"},{"exception_object_id":23680,"id":21,"trace":"actionpack
-        (7.0.8) lib/abstract_controller/base.rb:151:in `process''"},{"exception_object_id":23680,"id":22,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal.rb:188:in `dispatch''"},{"exception_object_id":23680,"id":23,"trace":"actionpack
-        (7.0.8) lib/action_controller/metal.rb:251:in `dispatch''"},{"exception_object_id":23680,"id":24,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch''"},{"exception_object_id":23680,"id":25,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve''"},{"exception_object_id":23680,"id":26,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve''"},{"exception_object_id":23680,"id":27,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each''"},{"exception_object_id":23680,"id":28,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve''"},{"exception_object_id":23680,"id":29,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call''"},{"exception_object_id":23680,"id":30,"trace":"rack
-        (2.2.8) lib/rack/etag.rb:27:in `call''"},{"exception_object_id":23680,"id":31,"trace":"rack
-        (2.2.8) lib/rack/conditional_get.rb:27:in `call''"},{"exception_object_id":23680,"id":32,"trace":"rack
-        (2.2.8) lib/rack/head.rb:12:in `call''"},{"exception_object_id":23680,"id":33,"trace":"activerecord
-        (7.0.8) lib/active_record/migration.rb:638:in `call''"},{"exception_object_id":23680,"id":34,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call''"},{"exception_object_id":23680,"id":35,"trace":"activesupport
-        (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks''"},{"exception_object_id":23680,"id":36,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call''"},{"exception_object_id":23680,"id":37,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call''"},{"exception_object_id":23680,"id":38,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call''"},{"exception_object_id":23680,"id":39,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call''"},{"exception_object_id":23680,"id":40,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call''"},{"exception_object_id":23680,"id":41,"trace":"railties
-        (7.0.8) lib/rails/rack/logger.rb:40:in `call_app''"},{"exception_object_id":23680,"id":42,"trace":"railties
-        (7.0.8) lib/rails/rack/logger.rb:25:in `block in call''"},{"exception_object_id":23680,"id":43,"trace":"activesupport
-        (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged''"},{"exception_object_id":23680,"id":44,"trace":"activesupport
-        (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged''"},{"exception_object_id":23680,"id":45,"trace":"activesupport
-        (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged''"},{"exception_object_id":23680,"id":46,"trace":"railties
-        (7.0.8) lib/rails/rack/logger.rb:25:in `call''"},{"exception_object_id":23680,"id":47,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call''"},{"exception_object_id":23680,"id":48,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call''"},{"exception_object_id":23680,"id":49,"trace":"rack
-        (2.2.8) lib/rack/runtime.rb:22:in `call''"},{"exception_object_id":23680,"id":50,"trace":"activesupport
-        (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
-        `call''"},{"exception_object_id":23680,"id":51,"trace":"actionpack (7.0.8)
-        lib/action_dispatch/middleware/server_timing.rb:61:in `block in call''"},{"exception_object_id":23680,"id":52,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events''"},{"exception_object_id":23680,"id":53,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call''"},{"exception_object_id":23680,"id":54,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call''"},{"exception_object_id":23680,"id":55,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call''"},{"exception_object_id":23680,"id":56,"trace":"rack
-        (2.2.8) lib/rack/sendfile.rb:110:in `call''"},{"exception_object_id":23680,"id":57,"trace":"actionpack
-        (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call''"},{"exception_object_id":23680,"id":58,"trace":"railties
-        (7.0.8) lib/rails/engine.rb:530:in `call''"},{"exception_object_id":23680,"id":59,"trace":"puma
-        (5.6.7) lib/puma/configuration.rb:252:in `call''"},{"exception_object_id":23680,"id":60,"trace":"puma
-        (5.6.7) lib/puma/request.rb:77:in `block in handle_request''"},{"exception_object_id":23680,"id":61,"trace":"puma
-        (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown''"},{"exception_object_id":23680,"id":62,"trace":"puma
-        (5.6.7) lib/puma/request.rb:76:in `handle_request''"},{"exception_object_id":23680,"id":63,"trace":"puma
-        (5.6.7) lib/puma/server.rb:443:in `process_client''"},{"exception_object_id":23680,"id":64,"trace":"puma
-        (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread''"}]}}'
-  recorded_at: Mon, 16 Sep 2024 10:00:24 GMT
+      string: '{"data":{"id":"1","type":"forecast","attributes":{"date":"2023-09-22","direction":"west","duration_info":{"Loveland":{"1726506900":{"duration":2738,"duration_with_traffic":3549},"1726507800":{"duration":2738,"duration_with_traffic":3590},"1726508700":{"duration":2738,"duration_with_traffic":3501},"1726509600":{"duration":2738,"duration_with_traffic":3340},"1726510500":{"duration":2738,"duration_with_traffic":3410},"1726511400":{"duration":2738,"duration_with_traffic":3453},"1726512300":{"duration":2738,"duration_with_traffic":3403},"1726513200":{"duration":2738,"duration_with_traffic":3378},"1726514100":{"duration":2738,"duration_with_traffic":3365},"1726515000":{"duration":2738,"duration_with_traffic":3299},"1726515900":{"duration":2738,"duration_with_traffic":3385}},"Winter
+        Park":{"1726506900":{"duration":3796,"duration_with_traffic":4665},"1726507800":{"duration":3796,"duration_with_traffic":4768},"1726508700":{"duration":3796,"duration_with_traffic":4671},"1726509600":{"duration":3796,"duration_with_traffic":4596},"1726510500":{"duration":3796,"duration_with_traffic":4529},"1726511400":{"duration":3796,"duration_with_traffic":4582},"1726512300":{"duration":3796,"duration_with_traffic":4448},"1726513200":{"duration":3796,"duration_with_traffic":4434},"1726514100":{"duration":3796,"duration_with_traffic":4429},"1726515000":{"duration":3796,"duration_with_traffic":4426},"1726515900":{"duration":3796,"duration_with_traffic":4478}},"Arapahoe
+        Basin":{"1726506900":{"duration":3515,"duration_with_traffic":4317},"1726507800":{"duration":3515,"duration_with_traffic":4357},"1726508700":{"duration":3515,"duration_with_traffic":4274},"1726509600":{"duration":3515,"duration_with_traffic":4176},"1726510500":{"duration":3515,"duration_with_traffic":4255},"1726511400":{"duration":3515,"duration_with_traffic":4432},"1726512300":{"duration":3515,"duration_with_traffic":4430},"1726513200":{"duration":3515,"duration_with_traffic":4325},"1726514100":{"duration":3515,"duration_with_traffic":4275},"1726515000":{"duration":3515,"duration_with_traffic":4296},"1726515900":{"duration":3515,"duration_with_traffic":4397}},"Keystone":{"1726506900":{"duration":4603,"duration_with_traffic":5927},"1726507800":{"duration":4603,"duration_with_traffic":6016},"1726508700":{"duration":4603,"duration_with_traffic":5859},"1726509600":{"duration":4603,"duration_with_traffic":5660},"1726510500":{"duration":4603,"duration_with_traffic":5813},"1726511400":{"duration":4603,"duration_with_traffic":5744},"1726512300":{"duration":4603,"duration_with_traffic":5717},"1726513200":{"duration":4603,"duration_with_traffic":5728},"1726514100":{"duration":4603,"duration_with_traffic":5790},"1726515000":{"duration":4603,"duration_with_traffic":5674},"1726515900":{"duration":4603,"duration_with_traffic":5685}},"Breckenridge":{"1726506900":{"duration":4966,"duration_with_traffic":6648},"1726507800":{"duration":4966,"duration_with_traffic":6727},"1726508700":{"duration":4966,"duration_with_traffic":6678},"1726509600":{"duration":4966,"duration_with_traffic":6502},"1726510500":{"duration":4966,"duration_with_traffic":6461},"1726511400":{"duration":4966,"duration_with_traffic":6531},"1726512300":{"duration":4966,"duration_with_traffic":6496},"1726513200":{"duration":4966,"duration_with_traffic":6519},"1726514100":{"duration":4966,"duration_with_traffic":6525},"1726515000":{"duration":4966,"duration_with_traffic":6433},"1726515900":{"duration":4966,"duration_with_traffic":6412}},"Copper":{"1726506900":{"duration":3962,"duration_with_traffic":5060},"1726507800":{"duration":3962,"duration_with_traffic":5118},"1726508700":{"duration":3962,"duration_with_traffic":5001},"1726509600":{"duration":3962,"duration_with_traffic":4815},"1726510500":{"duration":3962,"duration_with_traffic":4885},"1726511400":{"duration":3962,"duration_with_traffic":4916},"1726512300":{"duration":3962,"duration_with_traffic":4875},"1726513200":{"duration":3962,"duration_with_traffic":4896},"1726514100":{"duration":3962,"duration_with_traffic":4892},"1726515000":{"duration":3962,"duration_with_traffic":4749},"1726515900":{"duration":3962,"duration_with_traffic":4837}},"Vail":{"1726506900":{"duration":5149,"duration_with_traffic":6480},"1726507800":{"duration":5149,"duration_with_traffic":6531},"1726508700":{"duration":5149,"duration_with_traffic":6403},"1726509600":{"duration":5149,"duration_with_traffic":6211},"1726510500":{"duration":5149,"duration_with_traffic":6254},"1726511400":{"duration":5149,"duration_with_traffic":6276},"1726512300":{"duration":5149,"duration_with_traffic":6272},"1726513200":{"duration":5149,"duration_with_traffic":6335},"1726514100":{"duration":5149,"duration_with_traffic":6341},"1726515000":{"duration":5149,"duration_with_traffic":6204},"1726515900":{"duration":5149,"duration_with_traffic":6262}},"Beaver
+        Creek":{"1726506900":{"duration":6237,"duration_with_traffic":7625},"1726507800":{"duration":6237,"duration_with_traffic":7705},"1726508700":{"duration":6237,"duration_with_traffic":7604},"1726509600":{"duration":6237,"duration_with_traffic":7433},"1726510500":{"duration":6237,"duration_with_traffic":7471},"1726511400":{"duration":6237,"duration_with_traffic":7513},"1726512300":{"duration":6237,"duration_with_traffic":7512},"1726513200":{"duration":6237,"duration_with_traffic":7520},"1726514100":{"duration":6237,"duration_with_traffic":7526},"1726515000":{"duration":6237,"duration_with_traffic":7419},"1726515900":{"duration":6237,"duration_with_traffic":7472}},"Cooper":{"1726506900":{"duration":5888,"duration_with_traffic":7080},"1726507800":{"duration":5888,"duration_with_traffic":7141},"1726508700":{"duration":5888,"duration_with_traffic":7006},"1726509600":{"duration":5888,"duration_with_traffic":6821},"1726510500":{"duration":5888,"duration_with_traffic":6886},"1726511400":{"duration":5888,"duration_with_traffic":6972},"1726512300":{"duration":5888,"duration_with_traffic":6907},"1726513200":{"duration":5888,"duration_with_traffic":7003},"1726514100":{"duration":5888,"duration_with_traffic":6963},"1726515000":{"duration":5888,"duration_with_traffic":6751},"1726515900":{"duration":5888,"duration_with_traffic":6855}},"Monarch":{"1726506900":{"duration":9424,"duration_with_traffic":10824},"1726507800":{"duration":9424,"duration_with_traffic":10823},"1726508700":{"duration":9424,"duration_with_traffic":10780},"1726509600":{"duration":9424,"duration_with_traffic":10708},"1726510500":{"duration":9424,"duration_with_traffic":10667},"1726511400":{"duration":9424,"duration_with_traffic":10768},"1726512300":{"duration":9424,"duration_with_traffic":10687},"1726513200":{"duration":9424,"duration_with_traffic":10845},"1726514100":{"duration":9424,"duration_with_traffic":10673},"1726515000":{"duration":9424,"duration_with_traffic":10600},"1726515900":{"duration":9424,"duration_with_traffic":10663}}}}}}'
+  recorded_at: Fri, 22 Sep 2023 15:02:15 GMT
 recorded_with: VCR 6.2.0
