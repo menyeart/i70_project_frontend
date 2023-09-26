@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+ h1 {
+  
+ }
+
+ body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+ }
+
+ #buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+ }
+
+ .headers {
+  margin: 0 auto;
+ }
+
+ #forecast{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+ }
+
+ #forecast_title {
+  margin: 0 auto;
+ }
+
