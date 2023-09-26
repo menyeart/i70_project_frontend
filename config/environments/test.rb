@@ -57,4 +57,8 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  # CSS showing up in save and open pages
+  config.assets.prefix = "assets_test"    # place test assets in public/assets_test directory
+  config.action_controller.asset_host = "file://#{::Rails.root}/public"
 end
