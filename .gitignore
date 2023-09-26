@@ -30,5 +30,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-#Ignore simplecove test reports
+# Ignore simplecove test reports
 /coverage
+
+# Ignore files generated to load css to save and open page views
+/public/assets_test/

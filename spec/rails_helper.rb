@@ -61,6 +61,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # CSS showing up on save and open pages
+  config.before (scope = :suite) do
+    %x[bundle exec rake assets:precompile]
+  end
 end
 
 VCR.configure do |config|
