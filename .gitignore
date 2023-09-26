@@ -34,4 +34,4 @@
 /coverage
 
 # Ignore files generated to load css to save and open page views
-/public/assets
+/public/assets_test/
