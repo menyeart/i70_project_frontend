@@ -1,26 +1,30 @@
+
+<header>
+Denver Ski Area Drive Time Forecast
+</header>
+
 <div class = 'headers'> 
-<h1>Forecast</h1>
+<h1><%= "Direction: " + @forecast.direction.capitalize + "bound" %></h1>
 <h3><%= "Date: " + @forecast.date %></h3>
-<h3><%= "Direction: " + @forecast.direction %></h3>
 </div> 
 
 <div id = 'buttons'> 
-<%@forecast.duration_info.keys.map do |name| %>
-<%= button_to "#{name.to_s}" %>
+
+<%@forecast.resort_list.map do |name| %>
+<%= button_to "#{name.to_s}", "/", method: :get, params: { resort: name },local: true %>
 <% end %>
 </div>
 
 <div id = 'forecast'> 
 <div id = 'forecast_title'>
-<%button_placeholder = :Loveland %>
-<h3><%= button_placeholder.to_s %></h3>
+<h3><%= @forecast.resort %></h3>
 </div>
 <div>
-<%= "Drive time without traffic: #{@forecast.duration_info[button_placeholder].values.first[:duration] / 60 } minutes" %>
+<%= "Drive time without traffic/weather: #{@forecast.duration_info.values.first[:duration] / 60 } minutes" %>
 </div>
 <ul>
 <%time = (Time.local(1,1,1) + 19800 )%>
-<%@forecast.duration_info[button_placeholder].each do |time_info| %> 
+<%@forecast.duration_info.each do |time_info| %> 
 <li><%="Departure time: #{time.strftime("%I:%M%p")} Estimated travel time: #{(time_info.second[:duration_with_traffic] / 60)} minutes Additional drive time: #{(((time_info.second[:duration_with_traffic] - time_info.second[:duration])) / (time_info.second[:duration]).to_f * 100).to_i}%"%></li>
 <% time += 900 %>
 <%end%>
