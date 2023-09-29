@@ -1,36 +1,45 @@
 
 <header>
-Denver Ski Area Drive Time Forecast
-</header>
-
-<div class = 'headers'> 
-<h1><%= "Direction: " + @forecast.direction.capitalize + "bound" %></h1>
-<h3><%= "Date: " + @forecast.date %></h3>
-</div> 
-
+<div class="logo_date">
+<div class ="name">Front Range Freeway Forecast</div>
+<div><%=@forecast.date.to_date.strftime("%A, %B %d") %></div>
+</div>
 <div id = 'buttons'> 
-
 <%@forecast.resort_list.map do |name| %>
 <%= button_to "#{name.to_s}", "/", method: :get, params: { resort: name },local: true %>
 <% end %>
 </div>
+</header>
 
 <div id = 'forecast'> 
 <div id = 'forecast_title'>
-<h3><%= @forecast.resort %></h3>
+<div class = "logo"><%= image_tag ("#{@forecast.resort}"), class: 'logo' %></div>
+<div><%= @forecast.resort %></div>
 </div>
-<div>
-<%= "Drive time without traffic/weather: #{@forecast.duration_info.values.first[:duration] / 60 } minutes" %>
-</div>
-<ul>
+
+
 <%time = (Time.local(1,1,1) + 19800 )%>
+
+<table style="width:100%">
+  <tr>
+    <th>Departure Time</th>
+    <th>Estimated Travel Time</th>
+    <th>Additional Travel Time</th>
+    <th>Percent Above Ideal</th>
+  </tr>
 <%@forecast.duration_info.each do |time_info| %> 
-<li><%="Departure time: #{time.strftime("%I:%M%p")} Estimated travel time: #{(time_info.second[:duration_with_traffic] / 60)} minutes Additional drive time: #{(((time_info.second[:duration_with_traffic] - time_info.second[:duration])) / (time_info.second[:duration]).to_f * 100).to_i}%"%></li>
-<% time += 900 %>
-<%end%>
-</ul>
+  <% percent = (((time_info.second[:duration_with_traffic] - time_info.second[:duration])) / (time_info.second[:duration]).to_f * 100).to_i %>
+  <% ett = (time_info.second[:duration_with_traffic] / 60) %>
+  <tr>
+    <td><%=time.strftime("%I:%M%p")%></td>
+    <td><%="#{(ett / 60).floor} hour #{ett % 60} minutes"%></td>
+    <td><%=((time_info.second[:duration_with_traffic] - time_info.second[:duration])) / 60 %><%=" minutes" %></td>
+    <td> <%="#{percent}%" %> </td>
+  </tr>
+  <% time += 900 %>
+  <%end%>
+</table>
+
 </div> 
 
-<footer>
-Copyright 2023
-</footer>
+<footer>Copyright 2023 info version info, other junk about the project</footer>

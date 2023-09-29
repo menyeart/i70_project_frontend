@@ -7,6 +7,10 @@ RSpec.describe "Traffic forecast feature" do
         visit "/"
         click_button "Winter Park"
         save_and_open_page
+        # click_button "Loveland"
+        # save_and_open_page
+        # click_button "Vail"
+        # save_and_open_page
         # expect(page).to have_content("winter Park")
       end
     end
