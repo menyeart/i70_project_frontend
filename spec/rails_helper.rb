@@ -74,3 +74,7 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.ignore_localhost = false
 end
+
+Capybara.configure do |config|
+  config.asset_host = 'http://localhost:5000'
+end
