@@ -48,7 +48,7 @@
 
  #forecast{
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   border: 2px;
@@ -107,6 +107,11 @@
   background-color: rgb(44, 39, 39);
   color: white;
   padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
  }
 
  #logo_date {
@@ -116,10 +121,14 @@
 
  .name {
   font-size: 35px;
-  font-family:Arial, Helvetica, sans-serif
+  font-family:Arial, Helvetica, sans-serif;
+  padding-bottom: 7px;
  }
 
  img.logo {
   height: 50px;
  }
 
+ .copyright {
+  align-items: center;
+ }
